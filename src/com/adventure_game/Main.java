@@ -1,8 +1,6 @@
 package com.adventure_game;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by mragl on 27.06.2017.
@@ -26,21 +24,16 @@ public class Main {
         locations.get(1).addExit("E",3);
         locations.get(1).addExit("S",4);
         locations.get(1).addExit("N",5);
-//        locations.get(1).addExit("Q",0);
 
         locations.get(2).addExit("N",5);
-//        locations.get(2).addExit("Q",0);
 
         locations.get(3).addExit("W",1);
-//        locations.get(3).addExit("Q",0);
 
         locations.get(4).addExit("N",1);
         locations.get(4).addExit("W",2);
-//        locations.get(4).addExit("Q",0);
 
         locations.get(5).addExit("S",1);
         locations.get(5).addExit("W",2);
-//        locations.get(5).addExit("Q",0);
 
         int loc=1;
         while (true){
@@ -58,7 +51,26 @@ public class Main {
             }
             System.out.println();
 
+            Map<String,String> vocabulary=new HashMap<>();
+            vocabulary.put("NORTH","N");
+            vocabulary.put("SOUTH","S");
+            vocabulary.put("WEST","W");
+            vocabulary.put("EAST","E");
+            vocabulary.put("QUIT","Q");
+
+
             String direction=scanner.nextLine().toUpperCase();
+            if(direction.length()>1){
+                String[] directionText=direction.split(" ");
+                for(String d:directionText)
+                {
+                    if(vocabulary.containsKey(d.toUpperCase())){
+                        direction=vocabulary.get(d);
+                        break;
+                    }
+                }
+            }
+
 
             if(exits.containsKey(direction)){
                 loc=exits.get(direction);
