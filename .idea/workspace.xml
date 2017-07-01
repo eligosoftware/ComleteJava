@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f432f152-cf31-4d42-ac03-7204b4ae289b" name="Default" comment="finished with challenge, nearly good, but his solution was more elegant">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/setandhashset/HeavenlyBody.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/setandhashset/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="f432f152-cf31-4d42-ac03-7204b4ae289b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/adventure_game/Location.java" afterPath="$PROJECT_DIR$/src/com/adventure_game/Location.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/adventure_game/Main.java" afterPath="$PROJECT_DIR$/src/com/adventure_game/Main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -753,7 +748,7 @@
       <workItem from="1498572344549" duration="12000" />
       <workItem from="1498575978928" duration="3310000" />
       <workItem from="1498881163213" duration="7405000" />
-      <workItem from="1498918613776" duration="1450000" />
+      <workItem from="1498918613776" duration="1548000" />
     </task>
     <task id="LOCAL-00001" summary="finished with maps, next is challenge">
       <created>1498572151652</created>
@@ -769,11 +764,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498579311238</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="sets and hashsets , next is challenge">
+      <created>1498920283008</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1498920283008</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20490000" />
+    <option name="totallyTimeSpent" value="20588000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -820,7 +822,8 @@
     <MESSAGE value="Test" />
     <MESSAGE value="finished with maps, next is challenge" />
     <MESSAGE value="finished with challenge, nearly good, but his solution was more elegant" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished with challenge, nearly good, but his solution was more elegant" />
+    <MESSAGE value="sets and hashsets , next is challenge" />
+    <option name="LAST_COMMIT_MESSAGE" value="sets and hashsets , next is challenge" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
