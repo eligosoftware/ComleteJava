@@ -6,27 +6,39 @@ import java.util.Set;
 /**
  * Created by mragl on 01.07.2017.
  */
-public final class HeavenlyBody {
-    private final String name;
+public abstract class HeavenlyBody {
+
     private final double orbitalPeriod;
     private final Set<HeavenlyBody> satellites;
 
-    public HeavenlyBody(String name, double orbitalPeriod) {
-        this.name = name;
-        this.orbitalPeriod = orbitalPeriod;
-        satellites=new HashSet<>();
+    private final Key key;
+
+    public enum BodyTypes {
+        STAR,
+        PLANET,
+        DWARF_PLANET,
+        MOON,
+        COMET,
+        ASTEROID
     }
 
-    public String getName() {
-        return name;
+    public Key getKey() {
+        return key;
+    }
+
+    public HeavenlyBody(String name, double orbitalPeriod, BodyTypes bodyType) {
+        this.orbitalPeriod = orbitalPeriod;
+        satellites=new HashSet<>();
+        this.key=new Key(name,bodyType);
     }
 
     public double getOrbitalPeriod() {
         return orbitalPeriod;
     }
 
-    public boolean addMoon(HeavenlyBody moon){
-       return this.satellites.add(moon);
+    public boolean addSatellite(HeavenlyBody moon){
+
+        return this.satellites.add(moon);
     }
 
     public Set<HeavenlyBody> getSatellites() {
@@ -38,19 +50,66 @@ public final class HeavenlyBody {
         if(this==obj){
             return true;
         }
-        System.out.println("obj.getclass() = "+obj.getClass());
-        System.out.println("this.getclass() = "+this.getClass());
 
-        if(obj==null || obj.getClass()!=this.getClass()){
-            return false;
+        if(obj instanceof HeavenlyBody){
+            HeavenlyBody theObject=(HeavenlyBody)obj;
+            return this.key.equals(theObject.getKey());
         }
-        String objName=((HeavenlyBody)obj).getName();
-        return this.name.equals(objName);
+
+        return false;
+
     }
 
     @Override
     public int hashCode() {
-        return this.name.hashCode()+57;
+
+        return this.key.hashCode();
+    }
+
+    public static Key makeKey(String name, BodyTypes bodyType){
+        return new Key(name,bodyType);
+    }
+
+    @Override
+    public String toString() {
+        return this.key.name+": "+this.key.bodyType+", "+this.orbitalPeriod;
+    }
+    public static class Key{
+        private String name;
+        private BodyTypes bodyType;
+
+        @Override
+        public String toString() {
+            return this.name+" : "+this.bodyType;
+        }
+
+        private Key(String name, BodyTypes bodyType) {
+            this.name = name;
+            this.bodyType = bodyType;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public BodyTypes getBodyType() {
+            return bodyType;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.name.hashCode()+57+this.bodyType.hashCode();
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            Key key=(Key)obj;
+
+            if(this.name.equals(key.getName())){
+                return this.bodyType==key.getBodyType();
+            }
+            return false;
+        }
     }
 }
 
