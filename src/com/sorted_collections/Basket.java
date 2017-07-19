@@ -39,7 +39,7 @@ public class Basket {
 
             if(newQuantity>0){
                 list.put(item,newQuantity);
-                return 0;
+                return quantity;
             }
             else if(newQuantity==0){
                 list.remove(item);
